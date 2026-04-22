@@ -4,7 +4,7 @@ namespace AssemblyTwo;
 
 // Program.cs instantiated this class
 // Child but in different assembly
-public class ChildClass2 : FatherClass
+public class ChildClass2 : FatherClass 
 {
     Type fatherType = typeof(FatherClass);
    
