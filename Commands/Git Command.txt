@@ -32,6 +32,7 @@ Then push to remote repos: $ git push
 查看所有远程仓库地址:  git remote -v
 
 修改远程仓库origin的URL，而且用SSH key进行验证:  git remote set-url origin git@github.com:L1B15/Learning_CSharp.git
+（这个必须在有.git的文件夹里做）
 
 查看当前改动状态:  git status
 
