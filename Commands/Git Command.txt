@@ -1,4 +1,4 @@
-Move one level upward to the parent folder: $ cd ..
+Move one level upward to the parent directory: $ cd ..
 
 Add GitHub user to terminal: $ git config --global users.email "danielleliew0325@gmail.com"
                              $ git config --global users.name "L1B15"
@@ -7,14 +7,31 @@ Add changes of a commit to the staging area: $ git add .
 Then commit the changes: $ git commit -m "Did this today."
 Then push to remote repos: $ git push
 
-从远程下载（不改本地代码）:  $ git fetch
+从远程下载（不改本地代码）:  $ git fetch origin <branch-name>
 
-从远程fetch并且merge: $ git pull
+从远程fetch并且merge: $ git pull origin <branch-name>
 
 给本地的Git仓库绑定一个远程仓库，并且命名为origin:  $ git remote add origin https://github...
 
 强行用本地main branch覆盖远程，并且建立跟踪关系:  $ git push -u origin main --force
 (--u 建立默认关系）
 
-把branch传到GitHub，远程创建一个同名branch，建立tracking:  $ git push -u origin branch-name
+把branch传到GitHub，远程创建一个同名 branch，建立tracking:  $ git push -u origin branch-name
 (以后可以直接push和pull了)
+
+查看Git版本:  git --version
+
+从GitHub下载仓库:  git clone https://github.com/L1B15/Learning_CSharp.git
+
+在当前directory本地创建一个新的仓库（添加.git）:  git init
+
+查看本地的分支:  git branch
+查看所有分支（包括远程）:  git branch -a
+切换分支:  git checkout <branch-name>
+
+查看所有远程仓库地址:  git remote -v
+
+修改远程仓库origin的URL，而且用SSH key进行验证:  git remote set-url origin git@github.com:L1B15/Learning_CSharp.git
+
+查看当前改动状态:  git status
+
