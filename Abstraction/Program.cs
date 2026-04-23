@@ -36,11 +36,22 @@ class Program
         Console.WriteLine("Type of this instance is: " + abstractionBank1.GetType());
         Console.WriteLine("Type of this instance is: " + abstractionBank2.GetType());
 
+        Console.WriteLine("\n");
+
         #endregion
 
         #region Example of abstraction with Abstract Class
 
+        Console.WriteLine("[Bank example with abstraction using abstract class]:");
 
+        IBanc banc1 = BancFactory.GetBancObject("Banc1");
+        IBanc banc2 = BancFactory.GetBancObject("Banc2");
+
+
+        Console.WriteLine("Type of this instance is: " + banc1.GetType());
+        Console.WriteLine("Type of this instance is: " + banc2.GetType());
+
+        Console.WriteLine("\n");
 
         #endregion
 
@@ -85,6 +96,7 @@ public class AbstractionBank2: IBank
     }
 }
 
+// interface例子的
 public static class BankFactory
 {
     public static IBank GetBankObject(string BankType)
@@ -95,11 +107,52 @@ public static class BankFactory
         {
             BankObject = new AbstractionBank1();
         }
-        else if (BankType == "AbstractionBank2")
+        if (BankType == "AbstractionBank2")
         {
             BankObject = new AbstractionBank2(); 
         }
 
         return BankObject;
+    }
+}
+
+// abstrac class例子
+public static class BancFactory
+{
+    public static IBanc GetBancObject(string BancType)
+    {
+        IBanc BancObject = null;
+
+        if (BancType == "Banc1")
+        {
+            BancObject = new Banc1();
+        }
+        else if (BancType == "Banc2")
+        {
+            BancObject = new Banc1();
+        }
+
+        return BancObject;
+    }
+}
+
+public abstract class IBanc
+{
+    public abstract void WithdrawMoney();
+}
+
+public class Banc1: IBanc
+{
+    public override void WithdrawMoney()
+    {
+        Console.WriteLine("Banc1 withdraw");
+    }
+}
+
+public class Banc2: IBanc
+{
+    public override void WithdrawMoney()
+    {
+        Console.WriteLine("Banc2 withdraw");
     }
 }
